@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Industrial Machine Failure Prediction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="scanline"></div>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="mark">
+        <svg viewBox="0 0 56 56" fill="none">
+          <circle class="ring" cx="28" cy="28" r="24" stroke="url(#g1)" stroke-width="1.4" stroke-dasharray="4 7" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="17" fill="rgba(255,179,71,0.08)" stroke="rgba(255,179,71,0.4)" stroke-width="1.2"/>
+          <path d="M28 19v4M28 33v4M37 28h-4M23 28h-4M34.5 21.5l-2.8 2.8M24.3 31.7l-2.8 2.8M34.5 34.5l-2.8-2.8M24.3 24.3l-2.8-2.8" stroke="#ffcf8a" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="5" fill="#ffb347"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="56" y2="56">
+              <stop offset="0%" stop-color="#ffb347"/>
+              <stop offset="50%" stop-color="#4be3cf"/>
+              <stop offset="100%" stop-color="#b09bff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>Industrial Machine Failure Prediction</h1>
+        <div class="byline">Real-time sensor risk scoring · designed by <b>Jubaid Hoque</b></div>
+      </div>
+    </div>
+
+    <div class="status-pill">
+      <span class="dot checking" id="statusDot"></span>
+      <span id="statusText">checking backend…</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Sensor console</h2>
+        <span>15 channels</span>
+      </div>
+
+      <form id="sensorForm" autocomplete="off">
+        <div class="categories" id="categoriesWrap"></div>
+
+        <div class="action-row">
+          <button type="submit" class="predict-btn" id="predictBtn">
+            <span class="spinner"></span>
+            <svg class="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="#0a0d12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            <span class="btn-text">Run prediction</span>
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="#0a0d12" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <button type="button" class="ghost-btn" id="fillSampleBtn">load sample readings</button>
+          <button type="button" class="ghost-btn" id="clearBtn">clear</button>
+          <button type="button" class="ghost-btn" id="endpointToggle">api: localhost:8000</button>
+        </div>
+      </form>
+
+      <div id="resultArea">
+        <div class="result-card" id="resultCard">
+          <div class="result-icon" id="resultIcon"></div>
+          <div class="result-text">
+            <div class="result-title" id="resultTitle"></div>
+            <div class="result-sub" id="resultSub"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Designed by Jubaid Hoque · FastAPI + scikit-learn inference</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
