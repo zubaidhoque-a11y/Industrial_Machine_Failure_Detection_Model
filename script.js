@@ -44,7 +44,7 @@
   ];
 
   // Change this if your FastAPI server runs somewhere else.
-  let API_BASE = 'http://localhost:8000';
+  let API_BASE = 'https://industrial-machine-failure-detection-zu0t.onrender.com';
 
   const wrap = document.getElementById('categoriesWrap');
   const predictBtn = document.getElementById('predictBtn');
